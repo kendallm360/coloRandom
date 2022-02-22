@@ -8,26 +8,50 @@ h1 {
 }
 
 main {
+  display: flex;
 }
 
 .main-box {
+  border: solid 3px black;
+}
+
+.palette-boxes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
 }
 
 .box1 {
+  border: solid 3px red;
+  height: 160px;
+  width: 160px;
 }
 
 .box2 {
+  border: solid 3px orange;
+  height: 160px;
+  width: 160px;
 }
 
 .box3 {
+  border: solid 3px yellow;
+  height: 160px;
+  width: 160px;
 }
 
 .box4 {
+  border: solid 3px green;
+  height: 160px;
+  width: 160px;
 }
 
 .box5 {
-}
-.palette-boxes {
+  border: solid 3px purple;
+  height: 160px;
+  width: 160px;
 }
 
 .hex {
@@ -43,4 +67,5 @@ main {
 }
 
 .saved-box {
+  border: solid 3px blue;
 }
