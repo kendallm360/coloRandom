@@ -1,6 +1,6 @@
 /* font-family: 'Roboto', sans-serif; */
 
-body {
+> body {
   font-family: "Roboto", sans-serif;
 }
 
@@ -9,13 +9,47 @@ h1 {
 
 main {
   display: flex;
+  border: solid 3px black;
+  height: 100%;
 }
 
 .main-box {
-  border: solid 3px black;
+  border: solid 3px pink;
+  width: 70%;
 }
 
-.palette-boxes {
+.palette-box1 {
+  height: 120px;
+  width: 120px;
+  border: solid 3px blue;
+}
+
+.palette-box2 {
+  height: 120px;
+  width: 120px;
+  border: solid 3px blue;
+}
+
+.palette-box3 {
+  height: 120px;
+  width: 120px;
+  border: solid 3px blue;
+}
+
+.palette-box4 {
+  height: 120px;
+  width: 120px;
+  border: solid 3px blue;
+}
+
+.palette-box5 {
+  height: 120px;
+  width: 120px;
+  border: solid 3px blue;
+}
+
+.box-view {
+  border: solid 3px red;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -24,37 +58,14 @@ main {
   align-content: stretch;
 }
 
-.box1 {
-  border: solid 3px red;
-  height: 160px;
-  width: 160px;
-}
-
-.box2 {
-  border: solid 3px orange;
-  height: 160px;
-  width: 160px;
-}
-
-.box3 {
+.unit {
+  height: 200px;
+  width: 120px;
   border: solid 3px yellow;
-  height: 160px;
-  width: 160px;
-}
-
-.box4 {
-  border: solid 3px green;
-  height: 160px;
-  width: 160px;
-}
-
-.box5 {
-  border: solid 3px purple;
-  height: 160px;
-  width: 160px;
 }
 
 .hex {
+  border: solid 3px green;
 }
 
 .lock {
@@ -68,4 +79,5 @@ main {
 
 .saved-box {
   border: solid 3px blue;
+  width: 30%;
 }
