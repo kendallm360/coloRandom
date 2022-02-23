@@ -1,10 +1,13 @@
 /* font-family: 'Roboto', sans-serif; */
 
-> body {
+body {
   font-family: "Roboto", sans-serif;
 }
 
 h1 {
+  font-size: 75px;
+  text-align: center;
+  margin-bottom: 75px;
 }
 
 main {
@@ -18,34 +21,10 @@ main {
   width: 70%;
 }
 
-.palette-box1 {
+.palette-box {
   height: 120px;
   width: 120px;
-  border: solid 3px blue;
-}
-
-.palette-box2 {
-  height: 120px;
-  width: 120px;
-  border: solid 3px blue;
-}
-
-.palette-box3 {
-  height: 120px;
-  width: 120px;
-  border: solid 3px blue;
-}
-
-.palette-box4 {
-  height: 120px;
-  width: 120px;
-  border: solid 3px blue;
-}
-
-.palette-box5 {
-  height: 120px;
-  width: 120px;
-  border: solid 3px blue;
+  border: solid 3px red;
 }
 
 .box-view {
@@ -53,15 +32,20 @@ main {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   align-content: stretch;
+  margin-bottom: 75px;
 }
 
 .unit {
   height: 200px;
   width: 120px;
-  border: solid 3px yellow;
+  border: solid 3px black;
+}
+.unlock {
+  height: 10px;
+  width: 10px;
 }
 
 .hex {
@@ -72,12 +56,28 @@ main {
 }
 
 .buttons {
+  display: flex;
+  justify-content: space-around;
 }
 
 .button {
+  border-radius: 0;
+  box-shadow: 2px 2px black;
+  padding: 12px;
+  font-size: 20px;
+  background: white;
+
+  font-family: "Roboto", sans-serif;
 }
 
 .saved-box {
   border: solid 3px blue;
+  background: white;
   width: 30%;
+  border-style: ridge;
+}
+
+h2 {
+  font-size: 35px;
+  text-align: center;
 }
