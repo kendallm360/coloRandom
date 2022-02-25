@@ -21,6 +21,12 @@ main {
   width: 70%;
 }
 
+.copy {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .color-field {
   height: 120px;
   width: 120px;
@@ -43,16 +49,20 @@ main {
   width: 120px;
   border: solid 3px black;
 }
-.unlock {
-  height: 10px;
-  width: 10px;
+
+.unlock1, .locked1, .unlock2, .locked2, .unlock3, .locked3,
+.unlock4, .locked4, .unlock5, .locked5  {
+  height: 15px;
+  width: 15px;
+}
+
+
+.locked {
+  color: blue;
 }
 
 .hex {
   border: solid 3px green;
-}
-
-.lock {
 }
 
 .buttons {
@@ -80,4 +90,8 @@ main {
 h2 {
   font-size: 35px;
   text-align: center;
+}
+
+.hidden {
+  display: none;
 }
