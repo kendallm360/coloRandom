@@ -21,7 +21,7 @@ main {
   width: 70%;
 }
 
-.palette-box {
+.color-field {
   height: 120px;
   width: 120px;
   border: solid 3px red;
