@@ -7,5 +7,4 @@ class Palette {
   this.color5 = color5;
   this.id = Date.now();
   }
-  //console.log(color)
 }
