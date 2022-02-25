@@ -2,7 +2,10 @@
 
 class Color {
   constructor() {
-  this.locked = false;
+    this.hexCode = this.getRandomHex();
+    this.locked = false;
+    this.id = Date.now();
+
   }
 
 getRandomHex() {
@@ -15,7 +18,7 @@ getRandomHex() {
   }
 
   return output;
-  
+
 
 }
 }
