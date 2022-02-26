@@ -22,6 +22,7 @@ var unlock5 = document.querySelector(".unlock5");
 var savedSection = document.querySelector(".saved-box");
 var displayMiniPalette = document.querySelector(".displayMiniPalette");
 
+
 var colorField1 = document.getElementById("cf1");
 var colorField2 = document.getElementById("cf2");
 var colorField3 = document.getElementById("cf3");
@@ -78,11 +79,29 @@ function generatePalette() {
 }
 
 function showSavedPalettes() {
-  // for (var i = 0; i < savedPalettes.length; i++) {
-    displayMiniPalette.innerHTML += `<div class="displayMiniPalette"
-    id="${savedPalettes[0].id}" style='background-color:${savedPalettes[0].colors[0].hexCode}'>`
+   // for (var i = 0; i < 2; i++)
 
-  }
+    // displayMiniPalette.innerHTML += `<div class="newSection"><div class="steve"${savedPalettes[0]}" style='background-color:${savedPalettes[0].colors[0].hexCode}'><div class="john"${savedPalettes[1]}" style='background-color:${savedPalettes[1].colors[1].hexCode}'>
+    // </div>`
+    savedSection.innerHTML += `<section class="displayMiniPalette">
+    <div class="miniBox1"${savedPalettes[0]}" style='background-color:${savedPalettes[0].colors[0].hexCode}'></div>
+    <div class="miniBox1"${savedPalettes[1]}" style='background-color:${savedPalettes[1].colors[1].hexCode}'></div>
+    <div class="miniBox1"${savedPalettes[2]}" style='background-color:${savedPalettes[2].colors[2].hexCode}'></div>
+    <div class="miniBox1"${savedPalettes[3]}" style='background-color:${savedPalettes[3].colors[3].hexCode}'></div>
+    <div class="miniBox1"${savedPalettes[4]}" style='background-color:${savedPalettes[4].colors[4].hexCode}'></div>
+    <img class="trashCan" src="./trash-solid.svg" alt="Trash Can">
+    </section>`
+    //  <div class="steve"
+    // id="${savedPalettes[1].id}" style='background-color:${savedPalettes[1].colors[1].hexCode}'> <div class="steve"
+    // id="${savedPalettes[2].id}" style='background-color:${savedPalettes[2].colors[2].hexCode}'>`
+    // displayMiniPalette.innerHTML += `<div class="steve"
+    // id="${savedPalettes[3].id}" style='background-color:${savedPalettes[3].colors[3].hexCode}'>`
+    //function addMiniPalette() {
+    //sidebar.innerHTML += <section class ="sidebar_new_instance"><section class ="mini_palette" style=`background-color:${savedPalettes[0].colors[0].hexcodde}></section>`
+
+
+
+}
   // miniPalettes.innerHTML =
 // }
 
