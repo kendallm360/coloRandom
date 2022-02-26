@@ -7,20 +7,8 @@ var hex3 = document.querySelector(".hex3");
 var hex4 = document.querySelector(".hex4");
 var hex5 = document.querySelector(".hex5");
 
-var locked1 = document.querySelector(".locked1");
-var unlock1 = document.querySelector(".unlock1");
-
-var locked2 = document.querySelector(".locked2");
-var unlock2 = document.querySelector(".unlock2");
-
-var locked3 = document.querySelector(".locked3");
-var unlock3 = document.querySelector(".unlock3");
-
-var locked4 = document.querySelector(".locked4");
-var unlock4 = document.querySelector(".unlock4");
-
-var locked5 = document.querySelector(".locked5");
-var unlock5 = document.querySelector(".unlock5");
+var locked = document.querySelectorAll(".locked");
+var unlock = document.querySelectorAll(".unlock");
 
 var savedSection = document.querySelector(".saved-box");
 var displayMiniPalette = document.querySelector(".displayMiniPalette");
@@ -104,8 +92,8 @@ function showSavedPalettes() {
 function lockColor(i) {
   console.log(currentPalette.colors[i].locked)
   currentPalette.colors[i].locked = true;
-  locked1.classList.remove("hidden");
-  unlock1.classList.add("hidden");
+  locked[i].classList.remove("hidden");
+  unlock[i].classList.add("hidden");
   console.log(currentPalette.colors[i].locked)
 }
 

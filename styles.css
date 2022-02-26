@@ -101,8 +101,7 @@ width: 300px;
   border: solid 3px black;
 }
 
-.unlock1, .locked1, .unlock2, .locked2, .unlock3, .locked3,
-.unlock4, .locked4, .unlock5, .locked5  {
+.unlock, .locked  {
   height: 15px;
   width: 15px;
 }
