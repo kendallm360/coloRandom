@@ -1,5 +1,3 @@
-
-
 class Color {
   constructor() {
     this.hexCode = this.getRandomHex();

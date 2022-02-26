@@ -1,5 +1,3 @@
-//Only data in classes, not HTML
-
 class Palette {
   constructor() {
     this.colors = [
@@ -12,20 +10,12 @@ class Palette {
     this.id = Date.now();
   }
   moveColorToPalette() {
-    this.colors = [];
+    console.log(this.colors[0].locked)
+    // this.colors = [];
     for (var i = 0; i < 5; i++) {
-      this.colors.push(new Color());
+      if (!this.colors[i].locked) {
+        this.colors.splice(i, 1, new Color());
+      }
     }
-    //console.log(this.colors)
-    //var color1 = new Color();
-    // hex2.innerText = color2;
-    // colorField1.style.background = color1
   }
 }
-
-// this.color1 = color1 || new Color();
-// this.color2 = color2 || new Color();
-// this.color3 = color3 || new Color();
-// this.color4 = color4 || new Color();
-// this.color5 = color5 || new Color();
-// this.id = Date.now();
