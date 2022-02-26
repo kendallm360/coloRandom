@@ -16,6 +16,9 @@ class Palette {
       if (!this.colors[i].locked) {
         this.colors.splice(i, 1, new Color());
       }
+      this.colors[i].id = `${i}`
+      console.log(this.colors[i].id)
     }
   }
 }
+// for each color in array we want to assign an ID of 0-4

@@ -1,4 +1,6 @@
 // Variables
+var boxView = document.querySelector(".box-view")
+
 var hex1 = document.querySelector(".hex1");
 var hex2 = document.querySelector(".hex2");
 var hex3 = document.querySelector(".hex3");
@@ -42,18 +44,34 @@ var currentPalette;
 var savedPalettes = [];
 
 ///EVENT LISTENERS
-window.addEventListener("load", generatePalette);
+window.addEventListener("load", loadPalette);
+
+boxView.addEventListener('click', function(event){
+  for (var i = 0; i < currentPalette.colors.length; i++) {
+    if (event.target.closest('.unit').id === currentPalette.colors[i].id) {
+      console.log(currentPalette.colors[i].id)
+  }
+}
+
+
+})
+
 
 buttonNewPalette.addEventListener("click", refreshPalette);
 buttonSavedPalette.addEventListener("click", savePalette);
 
-unit1.addEventListener("click", showLocked1);
-unit2.addEventListener("click", showLocked2);
-unit3.addEventListener("click", showLocked3);
-unit4.addEventListener("click", showLocked4);
-unit5.addEventListener("click", showLocked5);
+// unit1.addEventListener("click", showLocked1);
+// unit2.addEventListener("click", showLocked2);
+// unit3.addEventListener("click", showLocked3);
+// unit4.addEventListener("click", showLocked4);
+// unit5.addEventListener("click", showLocked5);
 
 //FUNCTIONS
+function loadPalette() {
+  generatePalette()
+  currentPalette.moveColorToPalette()
+}
+
 function savePalette() {
   savedPalettes.push(currentPalette);
   showSavedPalettes()
@@ -76,8 +94,15 @@ function showSavedPalettes() {
     <img class="trashCan" src="./trash-solid.svg" alt="Trash Can">
     </section>`
 }
+// In javascript
+// whatever is clicked is what locks.
+// we need to compair html element that we click on
+// to actual color object instance
 
-// if showlock is envoked
+function lockColor() {
+
+}
+
 
 function showColors() {
 
@@ -102,33 +127,33 @@ function refreshPalette() {
 
 // when show lock is envoked
 
-function showLocked1() {
-  currentPalette.colors[0].locked = true;
-  locked1.classList.remove("hidden");
-  unlock1.classList.add("hidden");
-  console.log('locked')
-}
-
-function showLocked2() {
-  currentPalette.colors[1].locked = true;
-  locked2.classList.remove("hidden");
-  unlock2.classList.add("hidden");
-}
-
-function showLocked3() {
-  currentPalette.colors[2].locked = true;
-  locked3.classList.remove("hidden");
-  unlock3.classList.add("hidden");
-}
-
-function showLocked4() {
-  currentPalette.colors[3].locked = true;
-  locked4.classList.remove("hidden");
-  unlock4.classList.add("hidden");
-}
-
-function showLocked5() {
-  currentPalette.colors[4].locked = true;
-  locked5.classList.remove("hidden");
-  unlock5.classList.add("hidden");
-}
+// function showLocked1() {
+//   currentPalette.colors[0].locked = true;
+//   locked1.classList.remove("hidden");
+//   unlock1.classList.add("hidden");
+//   console.log('locked')
+// }
+//
+// function showLocked2() {
+//   currentPalette.colors[1].locked = true;
+//   locked2.classList.remove("hidden");
+//   unlock2.classList.add("hidden");
+// }
+//
+// function showLocked3() {
+//   currentPalette.colors[2].locked = true;
+//   locked3.classList.remove("hidden");
+//   unlock3.classList.add("hidden");
+// }
+//
+// function showLocked4() {
+//   currentPalette.colors[3].locked = true;
+//   locked4.classList.remove("hidden");
+//   unlock4.classList.add("hidden");
+// }
+//
+// function showLocked5() {
+//   currentPalette.colors[4].locked = true;
+//   locked5.classList.remove("hidden");
+//   unlock5.classList.add("hidden");
+// }
