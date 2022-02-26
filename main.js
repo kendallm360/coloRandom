@@ -33,6 +33,10 @@ var unlock5 = document.querySelector('.unlock5');
 
 var buttonNewPalette = document.querySelector('.newPalette');
 
+//Global Variables
+var paletteBox;
+var savedPalettes = [];
+
 // unlock.forEach(function(event) {
 //   showLocked(event);
 //
@@ -45,10 +49,44 @@ unit5.addEventListener('click', showLocked5)
 
 // .addEventListener('click', showLocked)
 // unlock3.addEventListener('click', showLocked)
-buttonNewPalette.addEventListener('click', moveToPalette);
-window.addEventListener('load', moveToPalette);
+buttonNewPalette.addEventListener('click', refreshPalette);
+window.addEventListener('load', generatePalette);
+
+function generatePalette () {
+  paletteBox = new Palette();
+  showColors();
+  console.log(paletteBox);
+}
+
+function showColors () {
+  hex1.innerText = paletteBox.colors[0].hexCode;
+  hex2.innerText = paletteBox.colors[1].hexCode;
+  hex3.innerText = paletteBox.colors[2].hexCode;
+  hex4.innerText = paletteBox.colors[3].hexCode;
+  hex5.innerText = paletteBox.colors[4].hexCode;
+
+  colorField1.style.background = paletteBox.colors[0].hexCode;
+  colorField2.style.background = paletteBox.colors[1].hexCode;
+  colorField3.style.background = paletteBox.colors[2].hexCode;
+  colorField4.style.background = paletteBox.colors[3].hexCode;
+  colorField5.style.background = paletteBox.colors[4].hexCode;
+
+}
+//innerText with for loop for every item in palette array of colors go over variables assigned to page for querySelectors and do innerText on them
+//   colorField1.style.background = color1
+//function that will put new colors in the palette
+
+
+function refreshPalette () {
+  console.log('button pressed')
+  paletteBox.moveColorToPalette();
+  showColors();
+  console.log(paletteBox)
+}
+
 
 function showLocked1 () {
+
   locked1.classList.remove("hidden");
   unlock1.classList.add("hidden");
 }
@@ -75,26 +113,29 @@ function showLocked5 () {
 
 // event.preventDefault();
 
-var color = new Color();
-var paletteBox = new Palette();
-function moveToPalette() {
-  var color1 = color.getRandomHex();
-  var color2 = color.getRandomHex();
-  var color3 = color.getRandomHex();
-  var color4 = color.getRandomHex();
-  var color5 = color.getRandomHex();
+// var color = new Color();
 
-  hex1.innerText = color1;
-  hex2.innerText = color2;
-  hex3.innerText = color3;
-  hex4.innerText = color4;
-  hex5.innerText = color5;
 
-  colorField1.style.background = color1
-  colorField2.style.background = color2
-  colorField3.style.background = color3
-  colorField4.style.background = color4
-  colorField5.style.background = color5
 
-  var paletteBox = new Palette(color1, color2, color3, color4, color5)
-}
+
+// function moveToPalette() {
+//   // var color1 = new Color();
+//   hex2.innerText = color2;
+//   colorField1.style.background = color1
+//   var color2 = color.getRandomHex();
+//   var color3 = color.getRandomHex();
+//   var color4 = color.getRandomHex();
+//   var color5 = color.getRandomHex();
+//
+//   hex1.innerText = new Color().hexCode;
+//   hex3.innerText = color3;
+//   hex4.innerText = color4;
+//   hex5.innerText = color5;
+//
+//   colorField2.style.background = color2
+//   colorField3.style.background = color3
+//   colorField4.style.background = color4
+//   colorField5.style.background = color5
+//
+//   var paletteBox = new Palette(color1, color2, color3, color4, color5)
+// }
