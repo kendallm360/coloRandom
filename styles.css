@@ -33,6 +33,24 @@ main {
   border: solid 3px red;
 }
 
+.displayMiniPalette {
+  border: solid 3px red;
+  height: 60px;
+  width: 60px;
+}
+
+.mini-box-view {
+height: 60px;
+width: 300px;
+
+
+}
+
+.mini-color-field {
+  height: 60px;
+  width: 60px;
+}
+
 .box-view {
   border: solid 3px red;
   display: flex;

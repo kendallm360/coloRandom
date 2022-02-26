@@ -20,6 +20,7 @@ var unlock4 = document.querySelector(".unlock4");
 var locked5 = document.querySelector(".locked5");
 var unlock5 = document.querySelector(".unlock5");
 var savedSection = document.querySelector(".saved-box");
+var displayMiniPalette = document.querySelector(".displayMiniPalette");
 
 var colorField1 = document.getElementById("cf1");
 var colorField2 = document.getElementById("cf2");
@@ -66,6 +67,7 @@ buttonSavedPalette.addEventListener("click", savePalette);
 //FUNCTIONS
 function savePalette() {
   savedPalettes.push(currentPalette);
+  showSavedPalettes()
   console.log(savedPalettes);
 }
 
@@ -75,29 +77,34 @@ function generatePalette() {
   console.log(currentPalette);
 }
 
-// function showSavedPalettes() {
-//   var displaySavedPalettes = [];
-//   for (var i = 0; i < savedPalettes.length; i++) {
-//     displaySavedPalettes += `<section class id="1" ${savedPalettes[i]} `
-//   }
+function showSavedPalettes() {
+  // for (var i = 0; i < savedPalettes.length; i++) {
+    displayMiniPalette.innerHTML += `<div class="displayMiniPalette"
+    id="${savedPalettes[0].id}" style='background-color:${savedPalettes[0].colors[0].hexCode}'>`
+
+  }
+  // miniPalettes.innerHTML =
 // }
 
-function showSavedPalettes() {
-  savedSection.innerHTML = currentPalette;
-}
 
-function loadSavedCovers() {
-  var displaySavedCovers = [];
-  for (var i = 0; i < savedCovers.length; i++) {
-    displaySavedCovers += `<section class="mini-cover" id="${savedCovers[i].id}" ondblclick="deleteCover(this.id)">
-    <img class="cover-image" src="${savedCovers[i].cover}">
-    <h2 class="cover-title">${savedCovers[i].title}</h2>
-    <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
-    </section>`;
-  }
+// function showSavedPalettes() {
+//   displayMiniPalette.style.background = currentPalette.colors[0].hexCode;
+//   currentPalette.colors[1].hexCode;
+//
+// }
 
-  savedCoverDisplay.innerHTML = displaySavedCovers;
-} // function loadSavedCovers() {
+// function loadSavedCovers() {
+//   var displaySavedCovers = [];
+//   for (var i = 0; i < savedCovers.length; i++) {
+//     displaySavedCovers += `<section class="mini-cover" id="${savedCovers[i].id}" ondblclick="deleteCover(this.id)">
+//     <img class="cover-image" src="${savedCovers[i].cover}">
+//     <h2 class="cover-title">${savedCovers[i].title}</h2>
+//     <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
+//     </section>`;
+//   }
+//
+//   savedCoverDisplay.innerHTML = displaySavedCovers;
+// } // function loadSavedCovers() {
 //   var displaySavedCovers = [];
 //   for (var i = 0; i < savedCovers.length; i++) {
 //     displaySavedCovers +=
@@ -123,6 +130,8 @@ function showColors() {
   colorField3.style.background = currentPalette.colors[2].hexCode;
   colorField4.style.background = currentPalette.colors[3].hexCode;
   colorField5.style.background = currentPalette.colors[4].hexCode;
+
+  return "steve"
 }
 
 function refreshPalette() {
