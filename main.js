@@ -49,11 +49,9 @@ window.addEventListener("load", loadPalette);
 boxView.addEventListener('click', function(event){
   for (var i = 0; i < currentPalette.colors.length; i++) {
     if (event.target.closest('.unit').id === currentPalette.colors[i].id) {
-      console.log(currentPalette.colors[i].id)
+      lockColor(i);
+    }
   }
-}
-
-
 })
 
 
@@ -69,7 +67,11 @@ buttonSavedPalette.addEventListener("click", savePalette);
 //FUNCTIONS
 function loadPalette() {
   generatePalette()
-  currentPalette.moveColorToPalette()
+  refreshPalette()
+}
+function refreshPalette() {
+  currentPalette.moveColorToPalette();
+  showColors();
 }
 
 function savePalette() {
@@ -99,8 +101,12 @@ function showSavedPalettes() {
 // we need to compair html element that we click on
 // to actual color object instance
 
-function lockColor() {
-
+function lockColor(i) {
+  console.log(currentPalette.colors[i].locked)
+  currentPalette.colors[i].locked = true;
+  locked1.classList.remove("hidden");
+  unlock1.classList.add("hidden");
+  console.log(currentPalette.colors[i].locked)
 }
 
 
@@ -120,10 +126,6 @@ function showColors() {
 
 }
 
-function refreshPalette() {
-  currentPalette.moveColorToPalette();
-  showColors();
-}
 
 // when show lock is envoked
 

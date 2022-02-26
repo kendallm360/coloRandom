@@ -14,7 +14,10 @@ class Palette {
     // this.colors = [];
     for (var i = 0; i < 5; i++) {
       if (!this.colors[i].locked) {
+        console.log(this.colors[0].locked)
         this.colors.splice(i, 1, new Color());
+        console.log(this.colors[0].locked)
+        console.log('steve')
       }
       this.colors[i].id = `${i}`
       console.log(this.colors[i].id)
