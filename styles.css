@@ -32,13 +32,39 @@ main {
   width: 120px;
   border: solid 3px red;
 }
+.saved-box {
+  border: solid 3px blue;
+  background: white;
+  width: 30%;
+  border-style: ridge;
+}
 
 .displayMiniPalette {
+  border: solid 3px green;
+  height: 100px;
+  width: 350px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.newSection {
+  border: solid 4px pink;
+  height: 75;
+  width: 300;
+}
+
+.miniBox1 {
   border: solid 3px red;
   height: 60px;
   width: 60px;
-}
 
+}
+.miniBox2 {
+  border: solid 3px yellow;
+  height: 60px;
+  width: 60px;
+}
 .mini-box-view {
 height: 60px;
 width: 300px;
@@ -98,12 +124,7 @@ width: 300px;
   font-family: "Roboto", sans-serif;
 }
 
-.saved-box {
-  border: solid 3px blue;
-  background: white;
-  width: 30%;
-  border-style: ridge;
-}
+
 
 h2 {
   font-size: 35px;
