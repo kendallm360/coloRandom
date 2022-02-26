@@ -42,10 +42,11 @@ main {
 .displayMiniPalette {
   border: solid 3px green;
   height: 100px;
-  width: 350px;
+  width: 330px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
 }
 
 .newSection {
@@ -56,10 +57,16 @@ main {
 
 .miniBox1 {
   border: solid 3px red;
-  height: 60px;
-  width: 60px;
+  height: 30px;
+  width: 30px;
 
 }
+
+.trashCan {
+  height: 30px;
+  width: 30px;
+}
+
 .miniBox2 {
   border: solid 3px yellow;
   height: 60px;

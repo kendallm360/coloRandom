@@ -89,6 +89,7 @@ function showSavedPalettes() {
     <div class="miniBox1"${savedPalettes[2]}" style='background-color:${savedPalettes[2].colors[2].hexCode}'></div>
     <div class="miniBox1"${savedPalettes[3]}" style='background-color:${savedPalettes[3].colors[3].hexCode}'></div>
     <div class="miniBox1"${savedPalettes[4]}" style='background-color:${savedPalettes[4].colors[4].hexCode}'></div>
+    <img class="trashCan" src="./trash-solid.svg" alt="Trash Can">
     </section>`
     //  <div class="steve"
     // id="${savedPalettes[1].id}" style='background-color:${savedPalettes[1].colors[1].hexCode}'> <div class="steve"
