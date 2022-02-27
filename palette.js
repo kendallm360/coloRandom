@@ -10,18 +10,12 @@ class Palette {
     this.id = Date.now();
   }
   moveColorToPalette() {
-    console.log(this.colors[0].locked)
-    // this.colors = [];
+    // console.log(this.colors[0].locked);
     for (var i = 0; i < 5; i++) {
       if (!this.colors[i].locked) {
-        console.log(this.colors[0].locked)
         this.colors.splice(i, 1, new Color());
-        console.log(this.colors[0].locked)
-        console.log('steve')
       }
-      this.colors[i].id = `${i}`
-      console.log(this.colors[i].id)
+      this.colors[i].id = `${i}`;
     }
   }
 }
-// for each color in array we want to assign an ID of 0-4
