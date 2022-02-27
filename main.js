@@ -35,13 +35,16 @@ var savedPalettes = [];
 window.addEventListener("load", loadPalette);
 
 boxView.addEventListener('click', function(event){
-  for (var i = 0; i < currentPalette.colors.length; i++) {
-    if (event.target.closest('.unit').id === currentPalette.colors[i].id) {
-      lockColor(i);
-    }
-  }
+test(event)
 })
 
+function test(event) {
+for (var i = 0; i < currentPalette.colors.length; i++) {
+  if (event.target.closest('.unit').id === currentPalette.colors[i].id) {
+    lockColor(i);
+  }
+  }
+}
 
 buttonNewPalette.addEventListener("click", refreshPalette);
 buttonSavedPalette.addEventListener("click", savePalette);
@@ -94,12 +97,26 @@ function showSavedPalettes() {
 // we need to compair html element that we click on
 // to actual color object instance
 
+// function lockColor(i) {
+//   console.log(currentPalette.colors[i].locked)
+//   currentPalette.colors[i].locked = true;
+//   locked[i].classList.remove("hidden");
+//   unlock[i].classList.add("hidden");
+//   console.log(currentPalette.colors[i].locked)
+// }
+
 function lockColor(i) {
-  console.log(currentPalette.colors[i].locked)
-  currentPalette.colors[i].locked = true;
-  locked[i].classList.remove("hidden");
-  unlock[i].classList.add("hidden");
-  console.log(currentPalette.colors[i].locked)
+
+  if (currentPalette.colors[i].locked) {
+    currentPalette.colors[i].locked = false;
+    unlock[i].classList.remove("hidden");
+    locked[i].classList.add("hidden");
+  }
+  else if (!currentPalette.colors[i].locked) {
+    currentPalette.colors[i].locked = true;
+    unlock[i].classList.add("hidden");
+    locked[i].classList.remove("hidden");
+}
 }
 
 
