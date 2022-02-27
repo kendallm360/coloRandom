@@ -76,11 +76,16 @@ function generatePalette() {
 
 function showSavedPalettes() {
     savedSection.innerHTML += `<section class="displayMiniPalette">
-    <div class="miniBox1"${savedPalettes[0]}" style='background-color:${savedPalettes[0].colors[0].hexCode}'></div>
-    <div class="miniBox1"${savedPalettes[1]}" style='background-color:${savedPalettes[1].colors[1].hexCode}'></div>
-    <div class="miniBox1"${savedPalettes[2]}" style='background-color:${savedPalettes[2].colors[2].hexCode}'></div>
-    <div class="miniBox1"${savedPalettes[3]}" style='background-color:${savedPalettes[3].colors[3].hexCode}'></div>
-    <div class="miniBox1"${savedPalettes[4]}" style='background-color:${savedPalettes[4].colors[4].hexCode}'></div>
+    <div class="miniBox1" style='background-color:${currentPalette.colors[0].hexCode}'></div>
+
+    <div class="miniBox1" style='background-color:${currentPalette.colors[1].hexCode}'></div>
+
+    <div class="miniBox1" style='background-color:${currentPalette.colors[2].hexCode}'></div>
+
+    <div class="miniBox1" style='background-color:${currentPalette.colors[3].hexCode}'></div>
+
+    <div class="miniBox1" style='background-color:${currentPalette.colors[4].hexCode}'></div>
+
     <img class="trashCan" src="./trash-solid.svg" alt="Trash Can">
     </section>`
 }
