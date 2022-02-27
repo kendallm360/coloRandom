@@ -35,13 +35,16 @@ var savedPalettes = [];
 window.addEventListener("load", loadPalette);
 
 boxView.addEventListener('click', function(event){
-  for (var i = 0; i < currentPalette.colors.length; i++) {
-    if (event.target.closest('.unit').id === currentPalette.colors[i].id) {
-      lockColor(i);
-    }
-  }
+test(event)
 })
 
+function test(event) {
+for (var i = 0; i < currentPalette.colors.length; i++) {
+  if (event.target.closest('.unit').id === currentPalette.colors[i].id) {
+    lockColor(i);
+  }
+  }
+}
 
 buttonNewPalette.addEventListener("click", refreshPalette);
 buttonSavedPalette.addEventListener("click", savePalette);
@@ -76,11 +79,16 @@ function generatePalette() {
 
 function showSavedPalettes() {
     savedSection.innerHTML += `<section class="displayMiniPalette">
-    <div class="miniBox1"${savedPalettes[0]}" style='background-color:${savedPalettes[0].colors[0].hexCode}'></div>
-    <div class="miniBox1"${savedPalettes[1]}" style='background-color:${savedPalettes[1].colors[1].hexCode}'></div>
-    <div class="miniBox1"${savedPalettes[2]}" style='background-color:${savedPalettes[2].colors[2].hexCode}'></div>
-    <div class="miniBox1"${savedPalettes[3]}" style='background-color:${savedPalettes[3].colors[3].hexCode}'></div>
-    <div class="miniBox1"${savedPalettes[4]}" style='background-color:${savedPalettes[4].colors[4].hexCode}'></div>
+    <div class="miniBox1" style='background-color:${currentPalette.colors[0].hexCode}'></div>
+
+    <div class="miniBox1" style='background-color:${currentPalette.colors[1].hexCode}'></div>
+
+    <div class="miniBox1" style='background-color:${currentPalette.colors[2].hexCode}'></div>
+
+    <div class="miniBox1" style='background-color:${currentPalette.colors[3].hexCode}'></div>
+
+    <div class="miniBox1" style='background-color:${currentPalette.colors[4].hexCode}'></div>
+
     <img class="trashCan" src="./trash-solid.svg" alt="Trash Can">
     </section>`
 }
@@ -89,12 +97,26 @@ function showSavedPalettes() {
 // we need to compair html element that we click on
 // to actual color object instance
 
+// function lockColor(i) {
+//   console.log(currentPalette.colors[i].locked)
+//   currentPalette.colors[i].locked = true;
+//   locked[i].classList.remove("hidden");
+//   unlock[i].classList.add("hidden");
+//   console.log(currentPalette.colors[i].locked)
+// }
+
 function lockColor(i) {
-  console.log(currentPalette.colors[i].locked)
-  currentPalette.colors[i].locked = true;
-  locked[i].classList.remove("hidden");
-  unlock[i].classList.add("hidden");
-  console.log(currentPalette.colors[i].locked)
+
+  if (currentPalette.colors[i].locked) {
+    currentPalette.colors[i].locked = false;
+    unlock[i].classList.remove("hidden");
+    locked[i].classList.add("hidden");
+  }
+  else if (!currentPalette.colors[i].locked) {
+    currentPalette.colors[i].locked = true;
+    unlock[i].classList.add("hidden");
+    locked[i].classList.remove("hidden");
+}
 }
 
 
