@@ -27,7 +27,7 @@ var buttonNewPalette = document.querySelector(".new-palette");
 var buttonSavedPalette = document.querySelector(".save-palette");
 
 //Global Variables
-var currentPalette;
+var currentPalette = new Palette();
 var savedPalettes = [];
 
 ///EVENT LISTENERS
@@ -57,10 +57,16 @@ buttonSavedPalette.addEventListener("click", savePalette);
 
 //FUNCTIONS
 function deleteSavedPalette() {
-  console.log(currentPalette);
+  console.log("steve", savedPalettes);
+
   for (var i = 0; i < savedPalettes.length; i++) {
+    //savedPalettes.pop(currentPalette);
     savedPalettes.splice(i, 1);
+    //console.log(thing1);
+    //debugger;
   }
+  console.log("second", savedPalettes);
+  return savedPalettes;
 }
 
 function loadPalette() {
@@ -79,7 +85,7 @@ function savePalette() {
 }
 
 function generatePalette() {
-  currentPalette = new Palette();
+  // currentPalette = new Palette();
   showColors();
   // console.log(currentPalette);
 }
