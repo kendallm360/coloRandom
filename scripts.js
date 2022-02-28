@@ -1,15 +1,15 @@
 // Variables
 var boxView = document.querySelector(".box-view");
-var hex1 = document.querySelector(".hex1");
-var hex2 = document.querySelector(".hex2");
-var hex3 = document.querySelector(".hex3");
-var hex4 = document.querySelector(".hex4");
-var hex5 = document.querySelector(".hex5");
-var colorField1 = document.getElementById("cf1");
-var colorField2 = document.getElementById("cf2");
-var colorField3 = document.getElementById("cf3");
-var colorField4 = document.getElementById("cf4");
-var colorField5 = document.getElementById("cf5");
+var hex1 = document.querySelector(".hex-1");
+var hex2 = document.querySelector(".hex-2");
+var hex3 = document.querySelector(".hex-3");
+var hex4 = document.querySelector(".hex-4");
+var hex5 = document.querySelector(".hex-5");
+var colorField1 = document.getElementById("colorField1");
+var colorField2 = document.getElementById("colorField2");
+var colorField3 = document.getElementById("colorField3");
+var colorField4 = document.getElementById("colorField4");
+var colorField5 = document.getElementById("colorField5");
 var locked = document.querySelectorAll(".locked");
 var unlock = document.querySelectorAll(".unlock");
 var buttonNewPalette = document.querySelector(".new-palette");
@@ -42,14 +42,14 @@ savedSection.addEventListener("click", function (event) {
 function loadPalette() {
   currentPalette.moveColorToPalette();
   showColors();
-};
+}
 
 function savePalette() {
   savedPalettes.push(currentPalette);
   showSavedPalettes();
   currentPalette = new Palette();
   loadPalette();
-};
+}
 
 function compareColorId(event) {
   for (var i = 0; i < currentPalette.colors.length; i++) {
@@ -57,18 +57,18 @@ function compareColorId(event) {
       lockColor(i);
     }
   }
-};
+}
 
 function deleteSavedPalette(event) {
-  console.log(event.target.parentElement)
-  var trashID = parseInt(event.target.id)
+  console.log(event.target.parentElement);
+  var trashID = parseInt(event.target.id);
   for (var i = 0; i < savedPalettes.length; i++) {
     if (trashID === savedPalettes[i].id) {
-    savedPalettes.splice(i, 1);
-    event.target.parentElement.remove();
+      savedPalettes.splice(i, 1);
+      event.target.parentElement.remove();
     }
   }
-};
+}
 
 function showColors() {
   hex1.innerText = currentPalette.colors[0].hexCode;
@@ -81,7 +81,7 @@ function showColors() {
   colorField3.style.background = currentPalette.colors[2].hexCode;
   colorField4.style.background = currentPalette.colors[3].hexCode;
   colorField5.style.background = currentPalette.colors[4].hexCode;
-};
+}
 
 function lockColor(i) {
   if (currentPalette.colors[i].locked) {
@@ -93,7 +93,7 @@ function lockColor(i) {
     unlock[i].classList.add("hidden");
     locked[i].classList.remove("hidden");
   }
-};
+}
 
 function showSavedPalettes() {
   savedSection.innerHTML += `<section class="displayMiniPalette">
@@ -104,4 +104,4 @@ function showSavedPalettes() {
     <div class="miniBox" style='background-color:${currentPalette.colors[4].hexCode}'></div>
     <img class="trashCan" id="${currentPalette.id}" src="./trash-solid.svg" alt="Trash Can">
     </section>`;
-};
+}
