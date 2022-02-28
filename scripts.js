@@ -97,11 +97,11 @@ function lockColor(i) {
 
 function showSavedPalettes() {
   savedSection.innerHTML += `<section class="displayMiniPalette">
-    <div class="miniBox1" style='background-color:${currentPalette.colors[0].hexCode}'></div>
-    <div class="miniBox1" style='background-color:${currentPalette.colors[1].hexCode}'></div>
-    <div class="miniBox1" style='background-color:${currentPalette.colors[2].hexCode}'></div>
-    <div class="miniBox1" style='background-color:${currentPalette.colors[3].hexCode}'></div>
-    <div class="miniBox1" style='background-color:${currentPalette.colors[4].hexCode}'></div>
+    <div class="miniBox" style='background-color:${currentPalette.colors[0].hexCode}'></div>
+    <div class="miniBox" style='background-color:${currentPalette.colors[1].hexCode}'></div>
+    <div class="miniBox" style='background-color:${currentPalette.colors[2].hexCode}'></div>
+    <div class="miniBox" style='background-color:${currentPalette.colors[3].hexCode}'></div>
+    <div class="miniBox" style='background-color:${currentPalette.colors[4].hexCode}'></div>
     <img class="trashCan" id="${currentPalette.id}" src="./trash-solid.svg" alt="Trash Can">
     </section>`;
 };

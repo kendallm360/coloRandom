@@ -4,21 +4,37 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-h1 {
-  font-size: 75px;
-  text-align: center;
-  margin-bottom: 75px;
-}
-
 main {
   display: flex;
-  border: solid 3px black;
   height: 100%;
 }
 
 .main-box {
-  border: solid 3px pink;
   width: 70%;
+}
+
+h1 {
+  font-size: 75px;
+  margin-bottom: 75px;
+  text-align: center;
+}
+
+.box-view {
+  cursor: pointer;
+  margin-bottom: 75px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.unit {
+  height: 200px;
+  width: 120px;
+}
+
+.color-field {
+  height: 120px;
+  width: 120px;
 }
 
 .copy {
@@ -27,90 +43,9 @@ main {
   align-items: center;
 }
 
-.color-field {
-  height: 120px;
-  width: 120px;
-  border: solid 3px red;
-}
-.saved-box {
-  border: solid 3px blue;
-  background: white;
-  width: 30%;
-  border-style: ridge;
-}
-
-.displayMiniPalette {
-  border: solid 3px green;
-  height: 100px;
-  width: 330px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.newSection {
-  border: solid 4px pink;
-  height: 75;
-  width: 300;
-}
-
-.miniBox1 {
-  border: solid 3px red;
-  height: 30px;
-  width: 30px;
-
-}
-
-.trashCan {
-  height: 30px;
-  width: 30px;
-}
-
-.miniBox2 {
-  border: solid 3px yellow;
-  height: 60px;
-  width: 60px;
-}
-.mini-box-view {
-height: 60px;
-width: 300px;
-
-
-}
-
-.mini-color-field {
-  height: 60px;
-  width: 60px;
-}
-
-.box-view {
-  border: solid 3px red;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-  align-items: center;
-  align-content: stretch;
-  margin-bottom: 75px;
-}
-
-.unit {
-  height: 200px;
-  width: 120px;
-  border: solid 3px black;
-}
-
 .unlock, .locked  {
   height: 15px;
   width: 15px;
-}
-
-
-
-
-.hex {
-  border: solid 3px green;
 }
 
 .buttons {
@@ -119,20 +54,44 @@ width: 300px;
 }
 
 .button {
+  background: white;
   border-radius: 0;
   box-shadow: 2px 2px black;
-  padding: 12px;
-  font-size: 20px;
-  background: white;
-
+  cursor: pointer;
   font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  padding: 12px;
 }
 
-
+.saved-box {
+  background: #fdfde7;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
 
 h2 {
   font-size: 35px;
   text-align: center;
+}
+
+.displayMiniPalette {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.miniBox {
+  height: 30px;
+  width: 30px;
+}
+
+.trashCan {
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
 }
 
 .hidden {
