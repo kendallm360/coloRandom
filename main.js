@@ -38,7 +38,7 @@ boxView.addEventListener("click", function (event) {
 });
 
 savedSection.addEventListener("click", function (event) {
-  // deleteSavedPalette(event);
+  //deleteSavedPalette(event);
   if (event.target.className === "trashCan") {
     deleteSavedPalette(event);
   }
@@ -52,43 +52,41 @@ function compareColorId(event) {
   }
 }
 
-buttonNewPalette.addEventListener("click", refreshPalette);
+buttonNewPalette.addEventListener("click", loadPalette);
 buttonSavedPalette.addEventListener("click", savePalette);
 
 //FUNCTIONS
-function deleteSavedPalette() {
-  console.log("steve", savedPalettes);
-
+function deleteSavedPalette(event) {
+  console.log(event.target.parentElement)
+  var trashID = parseInt(event.target.id)
   for (var i = 0; i < savedPalettes.length; i++) {
     //savedPalettes.pop(currentPalette);
+    if (trashID === savedPalettes[i].id) {
     savedPalettes.splice(i, 1);
-    //console.log(thing1);
+    event.target.parentElement.remove();
+}
     //debugger;
   }
-  console.log("second", savedPalettes);
-  return savedPalettes;
+
 }
 
 function loadPalette() {
-  generatePalette();
-  refreshPalette();
-}
-function refreshPalette() {
   currentPalette.moveColorToPalette();
   showColors();
+
 }
+
 
 function savePalette() {
   savedPalettes.push(currentPalette);
   showSavedPalettes();
+  currentPalette = new Palette();
+  loadPalette();
+
   // console.log(savedPalettes);
 }
 
-function generatePalette() {
-  // currentPalette = new Palette();
-  showColors();
-  // console.log(currentPalette);
-}
+
 
 function showSavedPalettes() {
   savedSection.innerHTML += `<section class="displayMiniPalette">
@@ -102,7 +100,7 @@ function showSavedPalettes() {
 
     <div class="miniBox1" style='background-color:${currentPalette.colors[4].hexCode}'></div>
 
-    <img class="trashCan" src="./trash-solid.svg" alt="Trash Can">
+    <img class="trashCan" id="${currentPalette.id}" src="./trash-solid.svg" alt="Trash Can">
     </section>`;
 }
 
