@@ -9,7 +9,7 @@ class Palette {
     ];
     this.id = Date.now();
   }
-  moveColorToPalette() {
+  checkLock() {
     for (var i = 0; i < 5; i++) {
       if (!this.colors[i].locked) {
         this.colors.splice(i, 1, new Color());
@@ -17,4 +17,4 @@ class Palette {
       this.colors[i].id = `${i}`;
     }
   }
-};
+}
