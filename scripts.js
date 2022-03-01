@@ -40,7 +40,7 @@ savedSection.addEventListener("click", function (event) {
 
 //FUNCTIONS
 function loadPalette() {
-  currentPalette.moveColorToPalette();
+  currentPalette.checkLock();
   showColors();
 }
 
@@ -60,7 +60,6 @@ function compareColorId(event) {
 }
 
 function deleteSavedPalette(event) {
-  console.log(event.target.parentElement);
   var trashID = parseInt(event.target.id);
   for (var i = 0; i < savedPalettes.length; i++) {
     if (trashID === savedPalettes[i].id) {
